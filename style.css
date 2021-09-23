@@ -153,7 +153,7 @@ header {
   display: flex;
     align-items: center;
     justify-content: center;
-    width: 40%
+    width: 50%
 }
 
 .like-header .column1 {
@@ -161,7 +161,7 @@ header {
     align-items: center;
     justify-content: flex-start;
     padding-left: 18px;
-    width: 60%;
+    width: 50%;
 }
 
 .like-header .column3 {
@@ -187,12 +187,12 @@ header {
 
 .like-item div {
   display: flex;
-    align-items: center;
-    justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .like-info {
-  width: 60%;
+  width: 50%;
     border-radius: 10px;
     flex-direction: column;
     padding: 10px;
@@ -200,7 +200,13 @@ header {
 
 .like-price {
   font-size: 1.2rem;
-  width: 40%;
+  width: 50%;
+}
+
+.like-subtotal {
+  width: 100%;
+  color: rgb(175, 175, 175);
+
 }
 
 .showLikes {
@@ -212,9 +218,11 @@ header {
 }
 
 .like-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
   width: 100%;
   padding: 18px;
-  color: rgb(175, 175, 175);
 }
 
 /* MAIN */

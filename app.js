@@ -206,7 +206,13 @@ function like(id, event) {
     if (element) {
         element.classList.toggle('colorToggle')
     }
+    likedItems()
     renderLikesList()
+}
+
+function likedItems(){
+    let numberOfItems = likes.length
+    document.querySelector('.like-subtotal').textContent = `You like ${numberOfItems} items`
 }
 
 
@@ -243,7 +249,7 @@ function removeItemFromLikeslist(id, e) {
             el.classList.remove('colorToggle')
         })
     }
-
+    likedItems()
     renderLikesList()
 }
 
