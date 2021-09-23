@@ -1,0 +1,111 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="#">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart JS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+</head>
+
+<body>
+
+<div class="app-container">
+        <header>
+            <div class="header-wrapper">
+                <div class="btn-home">
+                    <img src="./icons/home.png" alt="" style="width: 48px;">
+                    <span style="color: rgb(163,163,163)">home</span>
+                </div>
+
+               <div class="beSmart"><h1>BE SMART BUY ART!</div>
+
+         <div class="shopping-bag">
+            <div class="bagItems">
+                <img src="./icons/bag.png" alt="cart" style="width: 40px;">
+                   <span class="inCart">In Cart</span>
+                    <div class="total-items-in-cart">0</div>
+               </div>
+                <div class="viewCart">(click to view cart)</div>
+         </div>
+
+            <div class="likes">
+                <div class="heart"><img src="./icons/heartgrey.png" alt="add to wish list" class="addToWishList"></div>
+                <div class="viewCart">(click to view likes)</div>
+            </div>
+            
+            </div>
+                    
+      </header>
+
+        
+        <div class="content">
+            <div class="textFrame">
+                <div class="frame"><img src="img/frame.png" alt="frame" class="pictureFrame"></div>
+                <div class="text">
+                    One of the main benefits of art as an investment is that it is non-correlated with other asset types.<br> The art market
+                    doesn't care, for example, if there's a stock market crash.<br> Rather, it trades in its own world based on supply and
+                    demand.<br><span class="source">(source: https://www.gobankingrates.com)</span>
+                </div>
+            </div>
+                
+ 
+                    <div class="more-details">
+                        <span class="see">SEE WHAT IS IN STORE</span>
+                        <div class="see-more-btn">
+                            <img src="./icons/right-arrow.png" alt="">
+                           
+                        </div>
+                       
+                    </div>
+
+                    <div class="cartoon"></div>
+
+                <div class="products-list">
+                     <div class="products">
+                        <!-- render porducts here -->
+                    </div>
+                    <div class="footer"></div>
+                </div>
+        </div>
+
+        <!-- Cart -->
+        <div class="cart">
+            <div class="headerAndItems">
+                <div class="cart-header">
+                    <div class="column1">Item</div>
+                    <div class="column2">Price</div>
+                    <div class="column3">Units</div>
+                </div>
+                <div class="cart-items">
+                    <!-- render cart items here -->
+                </div>
+            </div>
+        
+        
+            <div class="cart-footer">
+                <div class="subtotal">
+                    Subtotal (0 items): $0
+                </div>
+                <div class="checkout">
+                    Proceed to checkout
+                </div>
+            </div>
+        </div>
+        <!-- Cart end -->
+
+        <!-- Likes list -->
+        <div class="likes-items">
+            <!-- render likes items here -->
+        </div>
+        <!-- Likes end -->
+
+    </div>
+
+    <script src="./products.js"></script>
+    <script src="./app.js"></script>
+</body>
+
+</html>

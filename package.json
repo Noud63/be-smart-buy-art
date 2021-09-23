@@ -1,0 +1,24 @@
+{
+  "name": "shoppingcart",
+  "version": "1.0.0",
+  "description": "Be Smart Buy Art",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "live-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Noud63/be-smart-buy-art.git"
+  },
+  "keywords": [
+    "Buy",
+    "Art"
+  ],
+  "author": "Noud van Dun",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Noud63/be-smart-buy-art/issues"
+  },
+  "homepage": "https://github.com/Noud63/be-smart-buy-art#readme"
+}
