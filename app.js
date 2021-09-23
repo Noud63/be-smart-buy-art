@@ -179,12 +179,12 @@ function renderLikesList() {
     likesItems.innerHTML = ""
     likes.forEach(item => {
         likesItems.innerHTML += `
-        <div class="cart-item" onclick="removeItemFromLikeslist(${item.id})">
-                    <div class="item-info">
+        <div class="like-item" onclick="removeItemFromLikeslist(${item.id})">
+                    <div class="like-info">
                         <img src=${item.imgSrc} alt=${item.name} class="picInCart">
                         <h5>${item.name}</h5>
                     </div>
-                    <div class="unit-price">
+                    <div class="like-price">
                         <small>$</small>${item.price}
                     </div>
                 </div>`
@@ -215,51 +215,35 @@ const likesIcon = document.querySelector('.likes');
 likesIcon.addEventListener('click', toggleLikesList)
 function toggleLikesList(e) {
 
-    if (likes.length === 0) return
-
     if (e.target && cartOpen === true) {
         toggleCart(e)
     }
 
     if (e.target) {
-        document.querySelector('.likes-items').classList.toggle('showLikes')
+        document.querySelector('.likes-list').classList.toggle('showLikes')
         document.querySelector('.products').classList.toggle('productsSmall')
         productsListEl.scrollIntoView({ behavior: "smooth" })
         likesOpen = !likesOpen
         console.log('LikesOpen = ' + likesOpen)
     }
+
 }
 
 
 //Remove item from likes list
-function removeItemFromLikeslist(id) {
+let list = [...document.querySelectorAll('.add-to-wishlist')]
+function removeItemFromLikeslist(id, e) {
     likes = likes.filter(item => {
         return item.id !== id
     })
 
     if (likes.length === 0) {
-        document.querySelector('.products').classList.remove('productsSmall');
+        document.querySelector('.heart').innerHTML = `<img src=${'../icons/heartgrey.png'} />`;
+        list.forEach(el => {
+            el.classList.remove('colorToggle')
+        })
     }
+
     renderLikesList()
-    // noLikes()
-
 }
-
-
-// //if likes array is empty
-// function noLikes(){
-//          let list = [...document.querySelectorAll('.add-to-wishlist')]
-//     if (likes.length === 0) {
-//         document.querySelector('.heart').innerHTML = `<img src=${'../icons/heartgrey.png'} />`;
-//         document.querySelector('.products').classList.toggle('productsSmall');
-//         list.forEach(el => {
-//             el.classList.remove('colorToggle')
-//         })
-//         likesOpen = !likesOpen
-//         console.log('LikesOpen = ' + likesOpen)
-//     }
-
-
-// }
-
 
