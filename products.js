@@ -7,8 +7,8 @@ const products = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.",
     imgSrc: "./img/disco.jpg",
-    numberOfUnits: 1,
-    like: false
+    icon: "./icons/heartred.png",
+    numberOfUnits: 1
   },
   {
     id: 1,
@@ -18,8 +18,7 @@ const products = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.",
     imgSrc: "./img/enigma.jpg",
-    numberOfUnits: 1,
-    like: false
+    numberOfUnits: 1
   },
   {
     id: 2,
@@ -29,8 +28,7 @@ const products = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.",
     imgSrc: "./img/hotel.jpg",
-    numberOfUnits: 1,
-    like: false
+    numberOfUnits: 1
   },
   {
     id: 3,
@@ -40,8 +38,7 @@ const products = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.",
     imgSrc: "./img/ufo.jpg",
-    numberOfUnits: 1,
-    like: false
+    numberOfUnits: 1
   },
   {
     id: 4,
@@ -61,8 +58,7 @@ const products = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.",
     imgSrc: "./img/teotu2.jpg",
-    numberOfUnits: 1,
-    like: false
+    numberOfUnits: 1
   },
   {
     id: 6,
@@ -72,8 +68,7 @@ const products = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.",
     imgSrc: "./img/disco.jpg",
-    numberOfUnits: 1,
-    like: false
+    numberOfUnits: 1
   },
   {
     id: 7,
@@ -83,8 +78,7 @@ const products = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.",
     imgSrc: "./img/disco.jpg",
-    numberOfUnits: 1,
-    like: false
+    numberOfUnits: 1
   },
   {
     id: 8,
@@ -94,7 +88,6 @@ const products = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.",
     imgSrc: "./img/disco.jpg",
-    numberOfUnits: 1,
-    like: false
+    numberOfUnits: 1
   },
 ];
