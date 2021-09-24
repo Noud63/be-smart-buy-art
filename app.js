@@ -11,7 +11,7 @@ seeMoreBtn.addEventListener('click', () => {
 });
 
 
-// Scrool to main page and close cart
+// Scrool to main page and close cart or likes list
 const mainPage = document.querySelector(".content");
 const seeLess = document.querySelector(".btn-home");
 seeLess.addEventListener('click', () => {
@@ -257,7 +257,6 @@ function removeItemFromLikeslist(id, e) {
         list.forEach(el => {
             el.classList.remove('colorToggle');
         })
-       
     }
     
     likedItems()
