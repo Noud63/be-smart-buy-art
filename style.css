@@ -36,7 +36,7 @@ header {
   left: 0;
   background-color: rgb(75, 75, 75);
   box-shadow: 0px 4px 4px rgb(26, 26, 26);
-  z-index: 99;
+  z-index: 10;
 }
 
 .header-wrapper {
@@ -74,7 +74,6 @@ header {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  cursor: pointer;
 }
 
 .bagItems {
@@ -82,6 +81,7 @@ header {
   align-items: center;
   justify-content: center;
   flex-direction: row;
+  cursor: pointer;
 }
 
 .inCart {
@@ -112,7 +112,7 @@ header {
 .viewCart {
   font-size: .8rem;
   margin-top: 10px;
-   color:  rgb(163, 163, 163);
+  color:  rgb(163, 163, 163);
 }
 
 .likes {
@@ -123,6 +123,9 @@ header {
   width: 20%;
   height: auto;
   padding-top: 10px;
+}
+
+.heart {
   cursor: pointer;
 }
 
@@ -190,6 +193,7 @@ header {
     justify-content: space-around;
     border-bottom: 1px solid rgb(156, 156, 156);
     padding: 10px 0;
+    border: 1px solid gray;
 }
 
 .like-item div {
@@ -200,9 +204,10 @@ header {
 
 .like-info {
   width: 50%;
-    border-radius: 10px;
-    flex-direction: column;
-    padding: 10px;
+  border-radius: 10px;
+  flex-direction: column;
+  padding: 10px;
+  cursor: pointer;
 }
 
 .like-price {
@@ -232,6 +237,16 @@ header {
   width: 100%;
   padding: 18px;
   background-color: rgb(75, 75, 75);
+}
+
+.picInCart {
+   width: 100%;
+   height: auto;
+   margin-bottom: 10px;
+}
+
+h5 {
+  color: rgb(77, 77, 77);
 }
 
 /* MAIN */
@@ -572,16 +587,6 @@ main {
 
 }
 
-.picInCart {
-   width: 100%;
-   height: auto;
-   margin-bottom: 5px;
-}
-
-h5 {
-  color: rgb(92, 92, 92);
-}
-
 .cart-item .item-info:hover {
   cursor: pointer;
 }
@@ -634,5 +639,44 @@ h5 {
 .footer {
   width: 100%;
   height: 500px;
-  background-color: rgb(43, 43, 43)
+  background-color: rgb(43, 43, 43);
+  margin-top: 50px;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left:0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+  justify-content: center;
+  align-items: center;
+  flex-direction: center;
+}
+
+.overlay.showIt {
+  display: flex;
+}
+
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 45%;
+  border-radius: 20px;
+  height: 18em;
+  color: rgb(255, 255, 255);
+  background-color: rgba(136, 136, 136, 1);
+  font-size: calc(12px + (28 - 12) * ((100vw - 320px) / (1980 - 320)));
+  box-shadow: 0px 0px 32px rgb(44, 44, 44);
+}
+
+.closeButton {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: white;
 }

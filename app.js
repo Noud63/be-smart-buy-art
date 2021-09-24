@@ -16,18 +16,18 @@ const mainPage = document.querySelector(".content");
 const seeLess = document.querySelector(".btn-home");
 seeLess.addEventListener('click', () => {
     mainPage.scrollIntoView({ behavior: "smooth" });
-    if(cartOpen === true){
+    if (cartOpen === true) {
         document.querySelector('.cart').classList.remove('show')
         document.querySelector('.products').classList.remove('productsSmall')
         cartOpen = false
     };
 
-    if(likesOpen === true){
+    if (likesOpen === true) {
         document.querySelector('.likes-list').classList.remove('showLikes')
         document.querySelector('.products').classList.remove('productsSmall')
         likesOpen = false
     };
-    
+
     //seeLess.disabled = true
 });
 
@@ -47,7 +47,7 @@ function renderProducts() {
                     <div class="desc">
                     <p>
                         Title: ${product.name}<br>
-                        Price: <small>\u20AC</small> ${product.price},-<br>
+                        Price: <small>\u20AC</small>\u00A0${product.price},-<br>
                         
                            Size: 270 x 170cm<br>
                         </p>
@@ -133,7 +133,7 @@ function renderSubtotal() {
         totalItems += item.numberOfUnits
         totalPrice += item.price * item.numberOfUnits
     })
-    document.querySelector('.subtotal').innerHTML = `Subtotal (${totalItems} items): $${totalPrice.toFixed(2)}`
+    document.querySelector('.subtotal').innerHTML = `Subtotal (${totalItems} items): \u20AC ${totalPrice.toFixed(2)}`
     document.querySelector(".total-items-in-cart").innerHTML = totalItems
 };
 
@@ -149,7 +149,7 @@ function renderCartItems() {
                         <h5>${item.name}</h5>
                     </div>
                     <div class="unit-price">
-                        <small>$</small>${item.price}
+                        <small>\u20AC</small>\u00A0${item.price},-
                     </div>
                     <div class="units">
                         <div class="btn minus" onclick="changeNumberOfUnits('minus', ${item.id})"><img src="${'../icons/minus.png'}"/></div>
@@ -162,10 +162,10 @@ function renderCartItems() {
 
 
 //Toggel cart 
-const btn = document.querySelector('.shopping-bag')
+const btn = document.querySelector('.bagItems')
 btn.addEventListener('click', toggleCart)
 function toggleCart(e) {
-    
+
     if (e.target && likesOpen === true) {
         toggleLikesList(e)
     }
@@ -192,7 +192,7 @@ function renderLikesList() {
                         <h5>${item.name}</h5>
                     </div>
                     <div class="like-price">
-                        <small>$</small>${item.price}
+                        <small>\u20AC</small>\u00A0${item.price},-
                     </div>
                 </div>`
     })
@@ -221,15 +221,15 @@ function like(id, event) {
 //likes counter in likes list footer
 function likedItems() {
     let numberOfItems = likes.length
-    document.querySelector('.like-subtotal').textContent = `You like ${numberOfItems} items`
+    document.querySelector('.like-subtotal').textContent = `You like ${numberOfItems} item(s)`
 };
 
 
 //Toggle likes list
-const likesIcon = document.querySelector('.likes');
+const likesIcon = document.querySelector('.heart');
 likesIcon.addEventListener('click', toggleLikesList)
 function toggleLikesList(e) {
-     
+
     if (e.target && cartOpen === true) {
         toggleCart(e)
     }
@@ -258,7 +258,7 @@ function removeItemFromLikeslist(id, e) {
             el.classList.remove('colorToggle');
         })
     }
-    
+
     likedItems()
     removeRedHeart(id)
     renderLikesList()
@@ -266,11 +266,28 @@ function removeItemFromLikeslist(id, e) {
 
 
 //remove red heart from product when item deleted from likes list
-function removeRedHeart(id){
-    products.find( product => {
-        if(product.id === id){
-           document.getElementById(product.id).firstChild.nextSibling.children[3].classList.remove('colorToggle');
+function removeRedHeart(id) {
+    products.find(product => {
+        if (product.id === id) {
+            document.getElementById(product.id).firstChild.nextSibling.children[3].classList.remove('colorToggle');
         }
     })
 };
 
+
+//Cart checkout button show overlay and modal 
+const checkoutButton = document.querySelector('.checkout')
+checkoutButton.addEventListener('click', showOverlay)
+function showOverlay(e) {
+    toggleCart(e)
+    document.querySelector('.overlay').classList.add('showIt')
+}
+
+
+//Close overlay and modal, scroll to top
+const closeButton = document.querySelector('.closeButton')
+closeButton.addEventListener('click', closeOverlay)
+function closeOverlay() {
+    document.querySelector('.overlay').classList.remove('showIt');
+    mainPage.scrollIntoView({ behavior: "smooth" });
+}

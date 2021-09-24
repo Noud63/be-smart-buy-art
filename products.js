@@ -62,32 +62,52 @@ const products = [
   },
   {
     id: 6,
-    name: "D.I.S.C.O.",
+    name: "Taxonomy/Entropy",
     price: 9950,
     instock: 100,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.",
-    imgSrc: "./img/disco.jpg",
+    imgSrc: "./img/taxonomy.jpg",
     numberOfUnits: 1
   },
   {
     id: 7,
-    name: "D.I.S.C.O.",
+    name: "Patchwork",
     price: 9950,
     instock: 100,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.",
-    imgSrc: "./img/disco.jpg",
+    imgSrc: "./img/patchwork.jpg",
     numberOfUnits: 1
   },
   {
     id: 8,
-    name: "D.I.S.C.O.",
+    name: "The Expansion...",
     price: 9950,
     instock: 100,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.",
-    imgSrc: "./img/disco.jpg",
+    imgSrc: "./img/teotu3.jpg",
+    numberOfUnits: 1
+  },
+  {
+    id: 8,
+    name: "The Present",
+    price: 9950,
+    instock: 100,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.",
+    imgSrc: "./img/thepresent.jpg",
+    numberOfUnits: 1
+  },
+  {
+    id: 9,
+    name: "C.O.W.",
+    price: 9950,
+    instock: 100,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, error.",
+    imgSrc: "./img/cow.jpg",
     numberOfUnits: 1
   },
 ];
