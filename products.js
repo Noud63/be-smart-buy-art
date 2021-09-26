@@ -91,7 +91,7 @@ const products = [
     numberOfUnits: 1
   },
   {
-    id: 8,
+    id: 9,
     name: "The Present",
     price: 9950,
     instock: 100,
@@ -101,7 +101,7 @@ const products = [
     numberOfUnits: 1
   },
   {
-    id: 9,
+    id: 10,
     name: "C.O.W.",
     price: 9950,
     instock: 100,

@@ -1,0 +1,225 @@
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left:0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+  justify-content: center;
+  align-items: center;
+  flex-direction: center;
+  background-color:rgba(136, 136, 136, .8);
+}
+
+.overlay2 {
+  display: none;
+  position: fixed;
+  top: 0;
+  left:0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+  justify-content: center;
+  align-items: center;
+  background-color:rgba(136, 136, 136, .8);
+}
+
+.overlay.showIt {
+  display: flex;
+}
+
+.overlay2.showIt {
+  display: flex;
+}
+
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  flex-direction: column;
+  padding: 50px 0 80px 0;
+  margin: 20px;
+  width: 1000px;
+  border-radius: 20px;
+  height: auto;
+  color: rgb(255, 255, 255);
+  background-color: rgba(136, 136, 136, 1);
+  font-size: calc(12px + (28 - 12) * ((100vw - 320px) / (1980 - 320)));
+  box-shadow: 0px 0px 32px rgb(44, 44, 44);
+}
+
+.modal2 {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  flex-direction: column;
+  padding: 100px 0 100px 0;
+  margin: 20px;
+  width: 1000px;
+  border-radius: 20px;
+  height: auto;
+  color: rgb(255, 255, 255);
+  background-color: rgba(136, 136, 136, 1);
+  font-size: calc(12px + (28 - 12) * ((100vw - 320px) / (1980 - 320)));
+  box-shadow: 0px 0px 32px rgb(44, 44, 44);
+}
+
+.closeButton {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: white;
+  cursor: pointer;
+}
+
+.order {
+  display: flex;
+  align-items: flex-start;
+  justify-content:flex-start;
+  width: 95%;
+  font-size: 1.2rem;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgb(255, 255, 255);
+}
+
+.payAmount {
+  font-size: 1.8rem;
+  padding: 10px;
+}
+
+.formContainer {
+  width: 95%;
+  height: auto;
+  display: flex;
+  align-items:flex-start;
+  justify-content: center; 
+  flex-direction: row;
+}
+
+@media only screen and (max-width: 850px) {
+ .formContainer {
+    flex-direction: column;
+}
+  }
+
+
+.upload {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  width: 50%;
+  padding-right: 10px;
+  border-right: 1px solid rgb(255, 255, 255);
+}
+
+@media only screen and (max-width: 850px) {
+ .upload {
+    border-right: 0px solid rgb(255, 255, 255);
+     width: 100%;
+}
+  }
+
+
+.upload__column {
+  margin-top: 20px;
+  width: 100%; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.name,
+.address,
+.city,
+.country, 
+.email,
+.tel{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  /* border: 1px solid rgb(255, 255, 255); */
+}
+
+.label {
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin-right: 10px;
+  font-size: 1rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: rgb(243, 243, 243);
+}
+
+input {
+    height: 30px;
+    width: 100%;
+    padding-left: 5px;
+    border-style: none;
+    outline: none;
+}
+
+::placeholder {
+    padding-left: 5px;
+    background-color: rgb(255, 255, 255);
+}
+
+.input {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active {
+   -webkit-box-shadow: 0 0 0px 1000px white inset;
+   box-shadow: 0 0 0px 1000px white inset;
+}
+
+.orderList {
+    margin-top: 20px;
+    padding-left: 10px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+@media only screen and (max-width: 850px) {
+ .orderList {
+    width: 100%;
+}
+  }
+
+.paintingList {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 30px;
+    font-size: 1.4rem
+}
+
+.painting {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 30px;
+    padding: 5px;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+.placeOrderBtn {
+  margin-top: 10px;
+  width: 100%;
+  height: 40px;
+  background: linear-gradient( to top , rgb(143, 57, 0), rgb(255, 136, 0));
+  border-style: none;
+  outline: none;
+  color: white;
+}

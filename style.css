@@ -131,6 +131,7 @@ header {
 
 /* ---------------------------------------------- */
 .likes-list {
+    
     display: none;
     flex-direction: column;
     position: fixed;
@@ -176,24 +177,26 @@ header {
 
 .like-header .column3 {
   display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    width: 0%
+  align-items: center;
+  justify-content: flex-end;
+  width: 0%
 }
 
 .likes-items {
+  max-height: 550px;
   display: flex;
   flex-direction: column;
   width: 100%;
   background-color: rgb(158, 158, 158);
+  overflow: auto;
 }
 
 .like-item {
   display: flex;
-    justify-content: space-around;
-    border-bottom: 1px solid rgb(156, 156, 156);
-    padding: 10px 0;
-    border: 1px solid gray;
+  justify-content: space-around;
+  border-bottom: 1px solid rgb(156, 156, 156);
+  padding: 10px 0;
+  border: 1px solid gray;
 }
 
 .like-item div {
@@ -240,7 +243,7 @@ header {
 }
 
 .picInCart {
-   width: 100%;
+   width: 55%;
    height: auto;
    margin-bottom: 10px;
 }
@@ -643,40 +646,44 @@ main {
   margin-top: 50px;
 }
 
-.overlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left:0;
-  right: 0;
-  bottom: 0;
-  z-index: 99;
-  justify-content: center;
-  align-items: center;
-  flex-direction: center;
+
+body::-webkit-scrollbar-track
+{
+  /* -webkit-box-shadow: inset 0 0 3px rgba(0, 4, 15, 0.5);
+  box-shadow: inset 0 0 3px rgba(0, 4, 15, 0.5); */
+  background-color: rgb(75, 75, 75);
 }
 
-.overlay.showIt {
-  display: flex;
+body::-webkit-scrollbar
+{
+  width: 12px;
+  background-color: #F5F5F5;
 }
 
-.modal {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  width: 45%;
-  border-radius: 20px;
-  height: 18em;
-  color: rgb(255, 255, 255);
-  background-color: rgba(136, 136, 136, 1);
-  font-size: calc(12px + (28 - 12) * ((100vw - 320px) / (1980 - 320)));
-  box-shadow: 0px 0px 32px rgb(44, 44, 44);
+body::-webkit-scrollbar-thumb
+{
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgb(0, 11, 34);
+  box-shadow: inset 0 0 8px rgb(0, 11, 34);
+  background-color: rgb(170, 170, 170);
 }
 
-.closeButton {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  color: white;
+
+.likes-items::-webkit-scrollbar-track
+{
+  background-color: rgb(158, 158, 158);
+}
+
+.likes-items::-webkit-scrollbar
+{
+  width: 10px;
+  background-color: #F5F5F5;
+}
+
+.likes-items::-webkit-scrollbar-thumb
+{
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgb(0, 11, 34);
+  box-shadow: inset 0 0 8px rgb(0, 11, 34);
+  background-color: rgb(212, 212, 212);
 }

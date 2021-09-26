@@ -1,4 +1,3 @@
-// Boolean values for toggling cart and likes list
 let cartOpen = false;
 let likesOpen = false;
 let likes = [];
@@ -53,7 +52,6 @@ function renderProducts() {
                         </p>
                     </div>
                     <div class="itemFooter">#${product.id}</div>
-
                     <div class="add-to-wishlist" onclick="like(${product.id}, event)">
                         <img src="./icons/heart.png" alt="add to wish list" class="addToWishList">
                     </div>
@@ -279,15 +277,41 @@ function removeRedHeart(id) {
 const checkoutButton = document.querySelector('.checkout')
 checkoutButton.addEventListener('click', showOverlay)
 function showOverlay(e) {
-    toggleCart(e)
-    document.querySelector('.overlay').classList.add('showIt')
+    if (cart.length === 0) {
+        document.querySelector('.cart').classList.remove('show')
+        document.querySelector('.products').classList.remove('productsSmall')
+        cartOpen = false
+    } else {
+        toggleCart(e)
+        document.querySelector('.overlay').classList.add('showIt')
+        addToShoppinglist()
+    }
+
 }
 
 
 //Close overlay and modal, scroll to top
-const closeButton = document.querySelector('.closeButton')
-closeButton.addEventListener('click', closeOverlay)
+const closeButton = [...document.querySelectorAll('.closeButton')]
+closeButton.forEach(btn => {
+    btn.addEventListener('click', closeOverlay)
+})
 function closeOverlay() {
     document.querySelector('.overlay').classList.remove('showIt');
+    document.querySelector('.overlay2').classList.remove('showIt')
     mainPage.scrollIntoView({ behavior: "smooth" });
+}
+
+
+//Add items to shopping list
+function addToShoppinglist() {
+    const html = `<div class="painting">Hello</div>`
+    document.querySelector('.orderedWorks').insertAdjacentHTML('beforeend', html)
+}
+
+
+//Form action 
+function thanksAndGoodbye() {
+    document.querySelector('.overlay').classList.remove('showIt');
+    document.querySelector('.overlay2').classList.add('showIt')
+
 }

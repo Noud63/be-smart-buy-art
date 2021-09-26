@@ -20,5 +20,6 @@
   "bugs": {
     "url": "https://github.com/Noud63/be-smart-buy-art/issues"
   },
-  "homepage": "https://github.com/Noud63/be-smart-buy-art#readme"
+  "homepage": "https://github.com/Noud63/be-smart-buy-art#readme",
+  "dependencies": {}
 }
