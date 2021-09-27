@@ -256,7 +256,6 @@ function removeItemFromLikeslist(id, e) {
             el.classList.remove('colorToggle');
         })
     }
-
     likedItems()
     removeRedHeart(id)
     renderLikesList()
@@ -284,9 +283,9 @@ function showOverlay(e) {
     } else {
         toggleCart(e)
         document.querySelector('.overlay').classList.add('showIt')
+        document.querySelector('.orderedWorks').innerHTML = ""
         addToShoppinglist()
     }
-
 }
 
 
@@ -304,14 +303,21 @@ function closeOverlay() {
 
 //Add items to shopping list
 function addToShoppinglist() {
-    const html = `<div class="painting">Hello</div>`
-    document.querySelector('.orderedWorks').insertAdjacentHTML('beforeend', html)
-}
-
+    cart.forEach( item => {
+        let totalOrdered = cart.length * item.price
+        const html = `<div class="painting">Painting No #${item.id + 1}, title: ${item.name} <span class="orderedPrice">Price: \u20AC ${item.price}</span></div>`
+        document.querySelector('.totalOrdered').innerHTML = `<span>Total: </span><span>Price \u20AC ${totalOrdered}</span>`
+        document.querySelector('.orderedWorks').insertAdjacentHTML('beforeend', html)
+    
+    })
+}   
+    
 
 //Form action 
 function thanksAndGoodbye() {
     document.querySelector('.overlay').classList.remove('showIt');
-    document.querySelector('.overlay2').classList.add('showIt')
-
+    document.querySelector('.overlay2').classList.add('showIt');
+    cart.length = 0;
+    updateCart();
+    localStorage.clear();
 }
