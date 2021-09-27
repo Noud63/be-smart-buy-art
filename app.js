@@ -1,3 +1,4 @@
+
 let cartOpen = false;
 let likesOpen = false;
 let likes = [];
@@ -305,7 +306,7 @@ function closeOverlay() {
 function addToShoppinglist() {
     cart.forEach( item => {
         let totalOrdered = cart.length * item.price
-        const html = `<div class="painting">Painting No #${item.id + 1}, title: ${item.name} <span class="orderedPrice">Price: \u20AC ${item.price}</span></div>`
+        const html = `<div class="painting">Painting No #${item.id + 1}, Title: ${item.name} <span class="orderedPrice">Price: \u20AC ${item.price}</span></div>`
         document.querySelector('.totalOrdered').innerHTML = `<span>Total: </span><span>Price \u20AC ${totalOrdered}</span>`
         document.querySelector('.orderedWorks').insertAdjacentHTML('beforeend', html)
     
@@ -319,5 +320,4 @@ function thanksAndGoodbye() {
     document.querySelector('.overlay2').classList.add('showIt');
     cart.length = 0;
     updateCart();
-    localStorage.clear();
 }

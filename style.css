@@ -26,11 +26,9 @@ html {
 header {
   width: 100%;
   height: 120px;
-  
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   position: fixed;
   top: 0;
   left: 0;
@@ -51,7 +49,7 @@ header {
   font-family: 'Times New Roman', Times, serif; 
   font-size: calc(10px + (30 - 10) * ((100vw - 320px) / (1980 - 320)));;
   color: rgb(163, 163, 163);
-  width: 40%;
+  width: 45%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -120,7 +118,7 @@ header {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  width: 20%;
+  width: 15%;
   height: auto;
   padding-top: 10px;
 }
@@ -253,6 +251,17 @@ h5 {
 }
 
 /* MAIN */
+.content {
+  width: 100%;
+  padding-top: 200px;
+  height: calc(100vh - 70px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+ background-color: rgb(75, 75, 75);
+}
+
 .textFrame {
   width: 70%;
   height: auto;
@@ -265,12 +274,21 @@ h5 {
   color:  rgb(163, 163, 163);
 }
 
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 1000px) {
   .textFrame {
      width: 90%;
   }
 }
 
+.text {
+  width: 100%;
+  position: absolute;
+  font-size: calc(6px + (24 - 6) * ((100vw - 320px) / (1980 - 320)));
+}
+
+.content.source {
+  font-size: calc(6px + (20 - 6) * ((100vw - 320px) / (1980 - 320)));
+}
 
 .frame {
   position: relative;
@@ -285,33 +303,12 @@ h5 {
   filter: drop-shadow(0px 6px 10px rgba(0,0,0,1));
 }
 
-.text {
-  width: 50%;
-  padding-left: 50px;
-  padding-right: 50px;
-  position: absolute;
-  font-size: calc(4px + (20 - 4) * ((100vw - 320px) / (1980 - 320)));
-}
-
-.source {
-  font-size: 14px;
-}
 main {
   width: 100%;
 }
 
 .see {
   color:  rgb(163, 163, 163);
-}
-.content {
-  width: 100%;
-  padding-top: 200px;
-  height: calc(100vh - 70px);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: column;
- background-color: rgb(75, 75, 75);
 }
 
 .cartoon {
@@ -321,25 +318,6 @@ main {
   background-color: rgb(75, 75, 75);
 }
 
-/* PRODUCTS */
-.products-container {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.product {
-  width: 300px;
-  border: 1px solid rgba(var(--right-side-bg-color), 0.4);
-  border-radius: 10px;
-  padding: 5px;
-}
-
-.product img {
-  width: 100%;
-}
 /* MORE DETAILS */
 .more-details {
   display: flex;
@@ -369,6 +347,8 @@ main {
   width: 100%;
   padding-top: 140px;
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
   background-color: rgb(75, 75, 75);
 }
@@ -376,35 +356,48 @@ main {
 
 /* PRODUCTS */
 .products {
-  height: 100%;
-  width: 99vw;
-  column-gap: 50px;
-  row-gap: 50px;
+  gap: 50px;
   margin-top: 20px;
   display: grid;
+  grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  grid-template-columns: repeat(4, 1fr);
+}
+
+.productsSmall {
   
+  grid-template-rows: repeat(4, 1fr);;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media only screen and (max-width: 1400px) {
+  .products {
+    grid-template-columns: repeat(4, 1fr);
+     grid-template-rows: 1fr 1fr 1fr ;
+     
+  }
 }
 
 @media only screen and (max-width: 1350px) {
   .products {
+    grid-template-columns: repeat(3, 1fr);
      grid-template-rows: 1fr 1fr 1fr ;
-     grid-template-columns: repeat(3, 1fr);
+     
   }
 }
 
 @media only screen and (max-width: 1000px) {
   .products {
+    grid-template-columns: repeat(2, 1fr);
      grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-     grid-template-columns: repeat(2, 1fr);
+     
   }
 }
 
 @media only screen and (max-width: 650px) {
   .products {
+    grid-template-columns: repeat(1, 1fr);
      grid-template-rows: repeat(9, 1fr);
-     grid-template-columns: repeat(1, 1fr);
+     
   }
 }
 .products .paintingPic {
@@ -418,11 +411,11 @@ main {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  width: 80%;
+  width: 280px;
   height: 350px;
 }
 .products .item .item-container {
-  width: 300px;
+  width: 100%;
   height: 350px;
   border-top-left-radius: 25px;
   border-top-right-radius:25px;
@@ -509,12 +502,6 @@ main {
   padding: 5px;
 }
 
-.productsSmall {
-  width: 75%;
-   grid-template-rows: 1fr 1fr 1fr;
-  grid-template-columns: repeat(3, 1fr);
-}
-
 /* CART */
 .cart {
   height: auto;
@@ -533,6 +520,18 @@ main {
   top: 120px;
   right: 0;
   overflow: auto;
+}
+
+@media only screen and (max-width: 1300px) {
+  .show {
+    width: 30%;
+  }
+}
+
+@media only screen and (max-width: 1070px) {
+  .show {
+    width: 35%;
+  }
 }
 
 /* cart header */
